@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool) # True
 
-ALLOWED_HOSTS = ['greatkart-course-env.eba-pepcery4.us-west-2.elasticbeanstalk.com', "*"]
+ALLOWED_HOSTS = ['greatkart.onrender.com', "*"]
 
 
 # Application definition
@@ -152,7 +152,8 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR /'static'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 STATICFILES_DIRS = [
     'greatkart/static',
  ]
