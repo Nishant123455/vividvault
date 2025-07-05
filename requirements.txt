@@ -20,4 +20,10 @@ s3transfer==0.3.6
 six==1.15.0
 sqlparse==0.3.1
 urllib3==1.26.3
+
+
 gunicorn
+pip>=23.0
+setuptools>=68.0
+wheel>=0.40
+psycopg2-binary
