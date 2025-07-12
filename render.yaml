@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: greatkart
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn greatkart.wsgi:application
+    runtime: python
+    region: oregon
+    build:
+      nixpacksConfigPath: ./nixpacks.toml
