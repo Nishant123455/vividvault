@@ -7,7 +7,7 @@
 <meta http-equiv="cache-control" content="max-age=604800" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<title>GreatKart | One of the Biggest Online Shopping Platform</title>
+<title>VividVault | One of the Biggest Online Shopping Platform</title>
 
 <link href="{% static 'images/favicon.ico' %}" rel="shortcut icon" type="image/x-icon">
 
@@ -54,10 +54,49 @@ $(document).ready(function() {
   <!-- navbar -->
   {% include 'includes/navbar.html' %}
 
+  <main class="page-content">
+
   {% block content %}
   <!-- content -->
   {% endblock %}
 
+  </main>
+
 
 <!-- footer -->
 {% include 'includes/footer.html' %}
+
+<!-- Footer visibility logic -->
+<script>
+(function () {
+    const footer = document.querySelector('.section-footer');
+
+    if (!footer) return;
+
+    function toggleFooter() {
+        const scrollTop = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const docHeight = document.documentElement.scrollHeight;
+
+        // Short pages (no scroll)
+        if (docHeight <= windowHeight + 5) {
+            footer.classList.add('footer-visible');
+            return;
+        }
+
+        // Long pages → show only at bottom
+        if (scrollTop + windowHeight >= docHeight - 5) {
+            footer.classList.add('footer-visible');
+        } else {
+            footer.classList.remove('footer-visible');
+        }
+    }
+
+    window.addEventListener('load', toggleFooter);
+    window.addEventListener('scroll', toggleFooter);
+    window.addEventListener('resize', toggleFooter);
+})();
+</script>
+
+</body>
+</html>
