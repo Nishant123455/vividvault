@@ -20,6 +20,15 @@ body {
 }
 
 
+/* LIST MENUE HOVER  COLOUR */
+.list-menu a:hover {
+    color: #e9aa24;
+}
+
+/*  FOR CART ICON*/
+.widget-header:hover i {
+    color: #b67627;
+}
 
 
 /* Hide Radio button */
@@ -547,6 +556,14 @@ section.header-main.border-bottom {
     box-shadow: 0 35px 70px rgba(0, 0, 0, 0.25);
 }
 
+
+
+/*  PAYPAL CSS  */
+
+
+
+
+
 /* ======================================
    PRODUCT IMAGE – DEPTH & ZOOM
    ====================================== */
@@ -608,6 +625,28 @@ section.header-main.border-bottom {
     color: #b8883d;
     font-weight: 700;
 }
+
+
+/* CSS FOR SOLVING $ EORROR IN GRAND TOTAL */
+.price-static {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 120px; /* prevents jumping */
+}
+
+.price-static .currency {
+    margin-right: 4px;
+    font-weight: 600;
+}
+
+.price-static .amount {
+    display: inline-block;
+    min-width: 70px; /* stabilizes width */
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
 
 
 /* ======================================

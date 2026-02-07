@@ -3,6 +3,8 @@ from store.models import Product, Variation
 from .models import Cart, CartItem
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
+
 
 # Create your views here.
 from django.http import HttpResponse
@@ -19,53 +21,42 @@ def add_cart(request, product_id):
     # If the user is authenticated
     if current_user.is_authenticated:
         product_variation = []
+    
         if request.method == 'POST':
-            for item in request.POST:
-                key = item
-                value = request.POST[key]
-
+            for key, value in request.POST.items():
                 try:
-                    variation = Variation.objects.get(product=product, variation_category__iexact=key, variation_value__iexact=value)
+                    variation = Variation.objects.get(
+                        product=product,
+                        variation_category__iexact=key,
+                        variation_value__iexact=value
+                    )
                     product_variation.append(variation)
                 except:
                     pass
 
-
-        is_cart_item_exists = CartItem.objects.filter(product=product, user=current_user).exists()
-        if is_cart_item_exists:
-            cart_item = CartItem.objects.filter(product=product, user=current_user)
-            ex_var_list = []
-            id = []
-            for item in cart_item:
-                existing_variation = item.variations.all()
-                ex_var_list.append(list(existing_variation))
-                id.append(item.id)
-
-            if product_variation in ex_var_list:
-                # increase the cart item quantity
-                index = ex_var_list.index(product_variation)
-                item_id = id[index]
-                item = CartItem.objects.get(product=product, id=item_id)
+        product_variation_ids = sorted([v.id for v in product_variation])
+    
+        cart_items = CartItem.objects.filter(product=product, user=current_user)
+    
+        for item in cart_items:
+            existing_variation_ids = sorted(
+                item.variations.values_list('id', flat=True)
+            )
+    
+            if existing_variation_ids == product_variation_ids:
                 item.quantity += 1
                 item.save()
-
-            else:
-                item = CartItem.objects.create(product=product, quantity=1, user=current_user)
-                if len(product_variation) > 0:
-                    item.variations.clear()
-                    item.variations.add(*product_variation)
-                item.save()
-        else:
-            cart_item = CartItem.objects.create(
-                product = product,
-                quantity = 1,
-                user = current_user,
-            )
-            if len(product_variation) > 0:
-                cart_item.variations.clear()
-                cart_item.variations.add(*product_variation)
-            cart_item.save()
+                return redirect('cart')
+    
+        # If no matching variation found → create new row
+        cart_item = CartItem.objects.create(
+            product=product,
+            quantity=1,
+            user=current_user
+        )
+        cart_item.variations.add(*product_variation)
         return redirect('cart')
+
     # If the user is not authenticated
     else:
         product_variation = []
@@ -217,3 +208,57 @@ def checkout(request, total=0, quantity=0, cart_items=None):
         'grand_total': grand_total,
     }
     return render(request, 'store/checkout.html', context)
+
+
+
+""" ADD NEW VIEW TO GET RID OF THE RELOAD OF WHEN WE SELECT MINUS AND PLUS BUTTON"""
+
+from django.http import JsonResponse
+
+def update_cart_quantity(request):
+    if request.method == 'POST':
+        cart_item_id = request.POST.get('cart_item_id')
+        action = request.POST.get('action')
+
+        try:
+            if request.user.is_authenticated:
+                cart_items = CartItem.objects.filter(user=request.user, is_active=True)
+                cart_item = CartItem.objects.get(id=cart_item_id, user=request.user)
+            else:
+                cart = Cart.objects.get(cart_id=_cart_id(request))
+                cart_items = CartItem.objects.filter(cart=cart, is_active=True)
+                cart_item = CartItem.objects.get(id=cart_item_id, cart=cart)
+
+            # PLUS
+            if action == 'plus':
+                cart_item.quantity += 1
+                cart_item.save()
+
+            # MINUS
+            elif action == 'minus':
+                if cart_item.quantity > 1:
+                    cart_item.quantity -= 1
+                    cart_item.save()
+                else:
+                    cart_item.delete()
+                    return JsonResponse({
+                        'removed': True,
+                        'cart_item_id': cart_item_id
+                    })
+
+            # Recalculate totals
+            total = sum(item.product.price * item.quantity for item in cart_items)
+            tax = (2 * total) / 100
+            grand_total = total + tax
+
+            return JsonResponse({
+                'removed': False,
+                'quantity': cart_item.quantity,
+                'sub_total': round(cart_item.sub_total(), 2),
+                'total': round(total, 2),
+                'tax': round(tax, 2),
+                'grand_total': round(grand_total, 2),
+            })
+
+        except CartItem.DoesNotExist:
+            return JsonResponse({'error': 'Item not found'}, status=404)

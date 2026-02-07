@@ -9,4 +9,12 @@ urlpatterns = [
     path('remove_cart_item/<int:product_id>/<int:cart_item_id>/', views.remove_cart_item, name='remove_cart_item'),
 
     path('checkout/', views.checkout, name='checkout'),
+
+    
+
+    path('update-cart/', views.update_cart_quantity, name='update_cart_quantity'), # ''' URLS FOR THE RELOAD ISSUE OF THE MINUS AND PLUS BUTTON '''
+
+    
+    
+
 ]
