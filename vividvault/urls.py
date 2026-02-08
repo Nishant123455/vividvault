@@ -18,9 +18,13 @@ from django.urls import path, include
 from . import views
 from django.conf.urls.static import static
 from django.conf import settings
+from django.http import HttpResponseNotFound
+
+def fake_admin(request):
+    return HttpResponseNotFound("Not Found")
 
 urlpatterns = [
-    path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
+    path('admin/', fake_admin),
     path('securelogin/', admin.site.urls),
     path('', views.home, name='home'),
     path('store/', include('store.urls')),
