@@ -1,0 +1,1306 @@
+html, 
+body {
+  margin: 0;
+  font-family: "Inter", Arial, "Helvetica Neue", "Segoe UI", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #343a40;
+  text-align: left;
+  background-color: #f1dfbe ;
+}
+
+.bg {
+    background-color: #f1dfbe !important;
+}
+
+/* Ensure section-content doesn't force white */
+.section-content {
+    background-color: transparent !important;
+}
+
+
+/* LIST MENUE HOVER  COLOUR */
+.list-menu a:hover {
+    color: #e9aa24;
+}
+
+/*  FOR CART ICON*/
+.widget-header:hover i {
+    color: #b67627;
+}
+
+
+/* Hide Radio button */
+.rate > input{
+  display: none;
+}
+
+.rate{
+  display: inline-block;;
+  border: 0;
+}
+
+.rate > label{
+  float: right;
+}
+
+/* Showing the stars */
+.rate > label:before{
+  display: inline-block;
+  font-size: 1.1rem;
+  font-family: FontAwesome;
+  content: "\f005";
+  margin:0;
+  padding:0.3rem .2rem;
+  cursor: pointer;
+}
+
+/* Half star */
+.rate .half:before{
+  content: "\f089";
+  position: absolute;
+  padding-right: 0;
+}
+
+/* Click and hover */
+input:checked ~ label, label:hover ~ label{
+  color: #ffb503;
+}
+
+/* hover hightlight */
+input:checked + label:hover, input:checked ~ label:hover,input:checked ~ label:hover ~ label,
+label:hover ~ input:checked ~ label{
+  color: #cc9000;
+}
+
+.rating-star i{
+  color: #ffb503 !important;
+}
+
+ul.thumb{
+  margin:0 auto;
+  padding: 0;
+  float: left;
+}
+ul.thumb li{
+  list-style: none;
+  margin: 10px;
+}
+ul.thumb li img{
+  width: 80px;
+  height: 80px;
+  border: 1px solid grey;
+}
+
+.video-banner {
+    position: relative;
+    width: 100%;
+    height: 400px;   /* adjust height */
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.banner-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+/* Dropdown button (primary) */
+.btn-primary,
+.btn-primary.dropdown-toggle {
+    background-color: #89643b !important;
+    border-color: #89643b !important;
+}
+
+/* Hover / open dropdown */
+.btn-primary:hover,
+.btn-primary:focus,
+.show > .btn-primary.dropdown-toggle {
+    background-color: #75512f !important;
+    border-color: #75512f !important;
+}
+
+/* Active */
+.btn-primary:active {
+    background-color: #5f4025 !important;
+    border-color: #5f4025 !important;
+}
+
+/* Product card base */
+.card-product-grid {
+    border-radius: 12px;
+    background: #ffffff;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Hover animation */
+.card-product-grid:hover {
+    transform: translateY(-12px) scale(1.02) rotateX(3deg) rotateY(-3deg);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.18);
+}
+
+/* Image wrapper */
+.card-product-grid .img-wrap {
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+}
+
+/* Image zoom on hover */
+.card-product-grid img {
+    transition: transform 0.5s ease;
+}
+
+.card-product-grid:hover img {
+    transform: scale(1.08);
+}
+
+/* Content lift */
+.card-product-grid .info-wrap {
+    transition: transform 0.4s ease;
+}
+
+.card-product-grid:hover .info-wrap {
+    transform: translateZ(20px);
+}
+
+.card-product-grid .img-wrap {
+    width: 100%;
+    height: 220px;              /* adjust if needed */
+    overflow: hidden;
+    background: transparent;   /* no background */
+    border-radius: 12px 12px 0 0;
+}
+
+.card-product-grid .img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         /* fills area without stretch */
+    background: transparent;
+}
+
+.card-product-grid figcaption.info-wrap {
+    background-color: #91712d;   /* only caption has bg */
+    padding: 15px;
+    border-radius: 0 0 12px 12px;
+    transition: background-color 0.3s ease;
+}
+.card-product-grid {
+    background: transparent;     /* remove card bg */
+    border-radius: 12px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.card-product-grid:hover {
+    transform: translateY(-12px) scale(1.02) rotateX(3deg) rotateY(-3deg);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.18);
+}
+.card-product-grid:hover img {
+    transform: scale(1.08);
+}
+
+/* outline button
+/* Outline primary button */
+.btn-outline-primary {
+    color: #89643b !important;
+    border-color: #89643b !important;
+    background-color: transparent !important;
+}
+
+/* Hover */
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+    background-color: #89643b !important;
+    border-color: #89643b !important;
+    color: #ffffff !important;
+}
+
+/* Active */
+.btn-outline-primary:active {
+    background-color: #75512f !important;
+    border-color: #75512f !important;
+    color: #ffffff !important;
+}
+
+
+/* Footer base */
+
+
+
+
+/* ======================================
+   FOOTER – CLEAN & SAFE (NO OVERLAP)
+   ====================================== */
+
+:root {
+    --footer-height: 90px; /* adjust if footer height changes */
+}
+
+/* Footer base */
+.section-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: var(--footer-height);
+    background: linear-gradient(135deg, #645128, #2a2a2a);
+    color: #dcdcdc;
+    font-size: 14px;
+    z-index: 999;
+
+    /* Hidden by default */
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+
+/* Show footer */
+.section-footer.footer-visible {
+    transform: translateY(0);
+}
+
+/* Footer content layout */
+.section-footer .footer-bottom {
+    height: 100%;
+    align-items: center;
+}
+
+/* Text */
+.section-footer p,
+.section-footer span {
+    color: #cfcfcf;
+}
+
+.section-footer .footer-brand {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Icons */
+.section-footer i {
+    margin-left: 10px;
+    color: #bfbfbf;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.section-footer i:hover {
+    color: #89643b;
+    transform: translateY(-3px) scale(1.1);
+}
+
+/* ======================================
+   CONTENT SAFETY (CRITICAL)
+   ====================================== */
+
+/* Always reserve footer space */
+.page-content {
+    padding-bottom: var(--footer-height);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .section-footer {
+        height: auto;
+        padding: 15px 0;
+    }
+
+    .page-content {
+        padding-bottom: 120px;
+    }
+}
+
+
+
+
+/* Header 
+section.header-main.border-bottom {
+    background-color: #ca8b17;
+}
+
+.text-muted {
+    color: #492a13 !important;
+}
+*/
+
+/* Header responsive css*/
+/* Header base */
+/* ===============================
+   HEADER – THEME & BASE
+   =============================== */
+
+  /* ===============================
+   FIXED HEADER
+   =============================== */
+
+
+
+.section-header .header-main {
+    background: linear-gradient(135deg, #645128, #2a2a2a);
+    color: #dcdcdc;
+    padding: 16px 0;
+    border: none !important;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    animation: headerFade 0.8s ease-in-out;
+}
+
+/* Remove default border */
+.section-header .header-main {
+    border-bottom: none !important;
+}
+
+/* Brand glow separator */
+.section-header .header-main::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #89643b, transparent);
+    margin-top: 12px;
+}
+
+/* ===============================
+   LOGO
+   =============================== */
+
+.section-header .logo {
+    max-height: 48px;
+    max-width: 140px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.section-header .brand-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.section-header .brand-wrap:hover .logo {
+    transform: scale(1.06);
+}
+
+/* ===============================
+   TEXT & LINKS
+   =============================== */
+
+.section-header a,
+.section-header small {
+    color: #e0e0e0;
+}
+
+.section-header a:hover {
+    color: #89643b;
+    text-decoration: none;
+}
+
+.section-header .title {
+    color: #ffffff;
+}
+
+/* ===============================
+   SEARCH BAR
+   =============================== */
+
+.section-header .search .form-control {
+    background-color: #ffffff;
+    border-radius: 30px 0 0 30px;
+    border: none;
+}
+
+.section-header .search .btn {
+    border-radius: 0 30px 30px 0;
+}
+
+/* ===============================
+   CART ICON
+   =============================== */
+
+.section-header .icon {
+    background: transparent;
+    border-color: #bfbfbf !important;
+    color: #ffffff;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.section-header .icon:hover {
+    color: #89643b;
+    transform: translateY(-3px) scale(1.1);
+}
+
+/* ===============================
+   DROPDOWN MENU
+   =============================== */
+
+.section-header .dropdown-menu {
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+}
+
+.section-header .dropdown-item {
+    color: #e0e0e0;
+}
+
+.section-header .dropdown-item:hover {
+    background-color: rgba(137, 100, 59, 0.15);
+    color: #ffffff;
+}
+
+/* ===============================
+   HEADER LAYOUT FIX (NO OVERLAP)
+   =============================== */
+
+.section-header .row.align-items-center {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: nowrap;
+}
+
+/* Category dropdown safety */
+.section-header .category-wrap {
+    position: relative;
+    z-index: 5;
+    white-space: nowrap;
+}
+
+/* Remove float-right conflict */
+.section-header .category-wrap.float-right {
+    float: none !important;
+}
+
+/* Prevent dropdown button shrinking */
+.section-header .btn.dropdown-toggle {
+    min-width: 150px;
+}
+
+/* ===============================
+   HEADER ANIMATION
+   =============================== */
+
+@keyframes headerFade {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+
+@media (max-width: 768px) {
+    .section-header .row {
+        text-align: center;
+    }
+
+    .section-header .category-wrap {
+        margin-top: 10px;
+    }
+
+    .section-header .row.align-items-center {
+        flex-wrap: wrap;
+    }
+}
+
+/* Product detalis page css*/
+
+/* ======================================
+   PRODUCT DETAILS – PAGE BASE
+   ====================================== */
+
+.section-content {
+    background-color: transparent !important;
+    animation: pageEnter 0.9s ease both;
+}
+
+.section-content .container {
+    padding-top: 20px;
+    perspective: 1200px;
+}
+
+/* ======================================
+   MAIN PRODUCT CARD – 3D FLOAT
+   ====================================== */
+
+.section-content .card {
+    border-radius: 16px;
+    border: none;
+    background: #ffffff;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.section-content .card:hover {
+    transform: translateY(-12px) rotateX(3deg) rotateY(-2deg);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.25);
+}
+
+
+
+/*  PAYPAL CSS  */
+
+
+
+
+
+/* ======================================
+   PRODUCT IMAGE – DEPTH & ZOOM
+   ====================================== */
+
+.gallery-wrap {
+    padding: 20px;
+    background: #ffffff;
+}
+
+.img-big-wrap {
+    text-align: center;
+}
+
+.img-big-wrap img {
+    max-width: 100%;
+    max-height: 420px;
+    object-fit: contain;
+    transform: translateZ(0);
+    transition: transform 0.4s ease;
+}
+
+.section-content .card:hover .img-big-wrap img {
+    transform: scale(1.08) translateZ(40px);
+}
+
+/* Thumbnails */
+.thumb img {
+    border-radius: 10px;
+    margin: 6px;
+    border: 2px solid transparent;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.thumb img:hover {
+    border-color: #89643b;
+    transform: scale(1.05);
+}
+
+/* ======================================
+   PRODUCT INFO
+   ====================================== */
+
+.content-body {
+    padding: 30px;
+    transform: translateZ(20px);
+}
+
+.content-body .title {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.price {
+    color: #e0e0e0;
+    font-weight: 700;
+}
+
+.pricee{
+    color: #b8883d;
+    font-weight: 700;
+}
+
+
+/* CSS FOR SOLVING $ EORROR IN GRAND TOTAL */
+.price-static {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 120px; /* prevents jumping */
+}
+
+.price-static .currency {
+    margin-right: 4px;
+    font-weight: 600;
+}
+
+.price-static .amount {
+    display: inline-block;
+    min-width: 70px; /* stabilizes width */
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+
+
+/* ======================================
+   SELECT OPTIONS – MICRO INTERACTIONS
+   ====================================== */
+
+.item-option-select {
+    margin-bottom: 15px;
+}
+
+.item-option-select select {
+    border-radius: 10px;
+    border: 1px solid #d6c6a1;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.item-option-select select:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.item-option-select select:focus {
+    border-color: #89643b;
+    box-shadow: 0 0 0 2px rgba(137, 100, 59, 0.25);
+}
+
+/* ======================================
+   DIVIDERS
+   ====================================== */
+
+.section-content hr {
+    border-top: 1px solid #e3d4b3;
+}
+
+/* ======================================
+   RATING STARS – GLOW
+   ====================================== */
+
+.rating-star i {
+    color: #89643b;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.rating-star i:hover {
+    transform: scale(1.2);
+    text-shadow: 0 0 8px rgba(137, 100, 59, 0.6);
+}
+
+/* ======================================
+   BUTTONS – DEPTH (COLOR UNCHANGED)
+   ====================================== */
+
+.btn-primary,
+.btn-outline-primary {
+    transform-style: preserve-3d;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-primary:hover,
+.btn-outline-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(137, 100, 59, 0.35);
+}
+
+.btn-primary:active,
+.btn-outline-primary:active {
+    transform: translateY(2px) scale(0.97);
+    box-shadow: none;
+}
+
+/* ======================================
+   REVIEW SECTION – 3D CARDS
+   ====================================== */
+
+.section-content h5 {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Review card */
+.box {
+    position: relative;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.box:hover {
+    transform: translateY(-8px) rotateX(2deg);
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.2);
+}
+
+/* Shine overlay */
+.box::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.25),
+        rgba(255,255,255,0)
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.box:hover::after {
+    opacity: 1;
+}
+
+/* Review date */
+.box .date {
+    font-size: 13px;
+}
+
+/* ======================================
+   ALERT POLISH
+   ====================================== */
+
+.alert {
+    border-radius: 10px;
+}
+
+/* ======================================
+   PAGE LOAD ANIMATION
+   ====================================== */
+
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ======================================
+   MOBILE SAFETY
+   ====================================== */
+
+@media (max-width: 768px) {
+    .section-content .card:hover,
+    .box:hover {
+        transform: translateY(-4px);
+    }
+}
+
+
+
+
+
+/* ======================================
+   REGISTER PAGE – BASE
+   ====================================== */
+
+.section-content {
+    background-color: transparent !important;
+    animation: pageEnter 0.9s ease both;
+}
+
+/* Center card area spacing */
+.section-content.padding-y {
+    padding-top: 40px;
+}
+
+/* ======================================
+   REGISTER CARD – 3D FLOAT
+   ====================================== */
+
+.section-content .card {
+    border-radius: 18px;
+    border: none;
+    background: #ffffff;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+/* Hover 3D lift */
+.section-content .card:hover {
+    transform: translateY(-10px) rotateX(3deg);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.25);
+}
+
+/* ======================================
+   CARD CONTENT DEPTH
+   ====================================== */
+
+.card-body {
+    padding: 32px;
+    transform: translateZ(20px);
+}
+
+/* Title */
+.card-title {
+    font-weight: 700;
+    text-align: center;
+    color: #2a2a2a;
+    margin-bottom: 20px;
+}
+
+/* ======================================
+   FORM FIELDS – CLEAN + INTERACTIVE
+   ====================================== */
+
+.form-group label {
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+/* Inputs */
+.form-control {
+    border-radius: 12px;
+    border: 1px solid #d6c6a1;
+    padding: 10px 14px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+/* Hover */
+.form-control:hover {
+    transform: translateY(-2px);
+}
+
+/* Focus */
+.form-control:focus {
+    border-color: #89643b;
+    box-shadow: 0 0 0 2px rgba(137, 100, 59, 0.25);
+}
+
+/* ======================================
+   BUTTON – DEPTH + PRESS FEEL
+   ====================================== */
+
+.btn-primary {
+    margin-top: 10px;
+    border-radius: 14px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover */
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(137, 100, 59, 0.4);
+}
+
+/* Active / press */
+.btn-primary:active {
+    transform: translateY(2px) scale(0.97);
+    box-shadow: none;
+}
+
+/* ======================================
+   ALERTS (ERROR / SUCCESS)
+   ====================================== */
+
+.alert {
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+/* ======================================
+   LOGIN LINK
+   ====================================== */
+
+.section-content p.text-center {
+    font-size: 15px;
+}
+
+.section-content p.text-center a {
+    color: #89643b;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.section-content p.text-center a:hover {
+    color: #5f4025;
+    text-decoration: none;
+}
+
+/* ======================================
+   PAGE LOAD ANIMATION
+   ====================================== */
+
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ======================================
+   MOBILE SAFETY
+   ====================================== */
+
+@media (max-width: 768px) {
+    .section-content .card:hover {
+        transform: translateY(-4px);
+    }
+}
+
+
+
+/* ======================================
+   LOGIN PAGE – BASE
+   ====================================== */
+
+.section-conten {
+    background-color: transparent !important;
+    animation: pageEnter 0.9s ease both;
+}
+
+/* Center spacing */
+.section-conten.padding-y {
+    padding-top: 40px;
+}
+
+/* ======================================
+   LOGIN CARD – 3D FLOAT
+   ====================================== */
+
+.section-conten .card {
+    border-radius: 18px;
+    border: none;
+    background: #ffffff;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+/* Hover lift */
+.section-conten .card:hover {
+    transform: translateY(-10px) rotateX(3deg);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.25);
+}
+
+/* ======================================
+   CARD BODY DEPTH
+   ====================================== */
+
+.section-conten .card-body {
+    padding: 32px;
+    transform: translateZ(20px);
+}
+
+/* Title */
+.section-conten .card-title {
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 22px;
+    color: #2a2a2a;
+}
+
+/* ======================================
+   INPUTS – INTERACTIVE FEEL
+   ====================================== */
+
+.section-conten .form-control {
+    border-radius: 12px;
+    border: 1px solid #d6c6a1;
+    padding: 10px 14px;
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
+}
+
+/* Hover */
+.section-conten .form-control:hover {
+    transform: translateY(-2px);
+}
+
+/* Focus */
+.section-conten .form-control:focus {
+    border-color: #89643b;
+    box-shadow: 0 0 0 2px rgba(137, 100, 59, 0.25);
+}
+
+/* ======================================
+   LINKS (FORGOT / SIGNUP)
+   ====================================== */
+
+.section-conten a {
+    color: #89643b;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.section-conten a:hover {
+    color: #5f4025;
+    text-decoration: none;
+}
+
+/* ======================================
+   BUTTON – DEPTH & PRESS
+   ====================================== */
+
+.section-conten .btn-primary {
+    border-radius: 14px;
+    margin-top: 10px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Hover */
+.section-conten .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(137, 100, 59, 0.4);
+}
+
+/* Press */
+.section-conten .btn-primary:active {
+    transform: translateY(2px) scale(0.97);
+    box-shadow: none;
+}
+
+/* ======================================
+   ALERT / INFO BOX (VERIFICATION)
+   ====================================== */
+
+.section-conten .alert {
+    border-radius: 14px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
+    animation: fadeScale 0.6s ease;
+}
+
+/* ======================================
+   PAGE ANIMATIONS
+   ====================================== */
+
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ======================================
+   MOBILE SAFETY
+   ====================================== */
+
+@media (max-width: 768px) {
+    .section-conten .card:hover {
+        transform: translateY(-4px);
+    }
+}
+
+
+
+/* ======================================
+   DASHBOARD PAGE – BASE
+   ====================================== */
+
+.section-conten {
+    background-color: transparent !important;
+    animation: pageEnter 0.9s ease both;
+}
+
+.section-conten.padding-y {
+    padding-top: 30px;
+}
+
+/* ======================================
+   MAIN DASHBOARD CARD
+   ====================================== */
+
+.section-conten > .container > .row > main > .card {
+    border-radius: 18px;
+    border: none;
+    background: #ffffff;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.15);
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.section-conten > .container > .row > main > .card:hover {
+    transform: translateY(-8px) rotateX(2deg);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* ======================================
+   CARD HEADER
+   ====================================== */
+
+.section-conten .card-header {
+    background: linear-gradient(135deg, #645128, #2a2a2a);
+    color: #ffffff;
+    border-bottom: none;
+    border-radius: 18px 18px 0 0;
+    font-weight: 600;
+}
+
+/* ======================================
+   INNER STAT / PROFILE CARDS
+   ====================================== */
+
+.section-conten .card-body .card {
+    border-radius: 16px;
+    border: none;
+    background: #ffffff;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.section-conten .card-body .card:hover {
+    transform: translateY(-10px) rotateX(3deg);
+    box-shadow: 0 28px 55px rgba(0, 0, 0, 0.25);
+}
+
+/* ======================================
+   CARD CONTENT DEPTH
+   ====================================== */
+
+.section-conten .card-body {
+    transform: translateZ(20px);
+}
+
+/* ======================================
+   DASHBOARD TEXT & LINKS
+   ====================================== */
+
+.section-conten h5 {
+    font-weight: 700;
+    color: #2a2a2a;
+}
+
+.section-conten h4 {
+    font-weight: 800;
+    color: #89643b;
+}
+
+.section-conten a {
+    color: #89643b;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.section-conten a:hover {
+    color: #5f4025;
+    text-decoration: none;
+}
+
+/* ======================================
+   PROFILE IMAGE POLISH
+   ====================================== */
+
+.section-conten img {
+    border: 3px solid #89643b;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease;
+}
+
+.section-conten img:hover {
+    transform: scale(1.12);
+}
+
+/* ======================================
+   ALERTS
+   ====================================== */
+
+.section-conten .alert {
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    animation: fadeScale 0.6s ease;
+}
+
+/* ======================================
+   PAGE ANIMATIONS
+   ====================================== */
+
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ======================================
+   MOBILE SAFETY
+   ====================================== */
+
+@media (max-width: 768px) {
+    .section-conten > .container > .row > main > .card:hover,
+    .section-conten .card-body .card:hover {
+        transform: translateY(-4px);
+    }
+}
+
+
+/* ======================================
+   ACTIVE STATE – DASHBOARD / NAV / SIDEBAR
+   ====================================== */
+
+/* Generic active override */
+.active {
+    background-color: #89643b !important;
+    color: #ffffff !important;
+}
+
+/* Sidebar / list-group active */
+.list-group-item.active {
+    background-color: #89643b !important;
+    border-color: #89643b !important;
+    color: #ffffff !important;
+}
+
+/* Nav links active */
+.nav-link.active {
+    background-color: #89643b !important;
+    color: #ffffff !important;
+}
+
+/* Hover polish */
+.list-group-item.active:hover,
+.nav-link.active:hover {
+    background-color: #5f4025 !important;
+}
+
