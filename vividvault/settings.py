@@ -29,6 +29,7 @@ DEBUG = config('DEBUG', default=False, cast=bool) # True
 
 ALLOWED_HOSTS = ["vividvault-venv.eba-wj36dskn.ap-south-1.elasticbeanstalk.com",
                  "172.31.25.10",
+                 "172.31.5.85",
     "13.205.217.51",
     "localhost",
     "127.0.0.1",]
