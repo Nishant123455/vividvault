@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY', default='unsafe-dev-secret-key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool) # True
 
-ALLOWED_HOSTS = [
+ALLOWED_HOSTS = ["vividvault-venv.eba-wj36dskn.ap-south-1.elasticbeanstalk.com",
                  "172.31.25.10",
     "13.205.217.51",
     "localhost",
@@ -98,10 +98,8 @@ AUTH_USER_MODEL = 'accounts.Account'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 # Database Configuration
-ENVIRONMENT = config('ENVIRONMENT', default='development')
-
-if ENVIRONMENT == 'production' and 'RDS_DB_NAME' in os.environ:
-     DATABASES = {
+if 'RDS_DB_NAME' in os.environ:
+    DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': os.environ['RDS_DB_NAME'],
@@ -118,7 +116,6 @@ else:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-
 
 
 
