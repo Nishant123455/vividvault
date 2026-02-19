@@ -100,15 +100,15 @@ AUTH_USER_MODEL = 'accounts.Account'
 # Database Configuration
 ENVIRONMENT = config('ENVIRONMENT', default='development')
 
-if ENVIRONMENT == 'production':
-    DATABASES = {
+if ENVIRONMENT == 'production' and 'RDS_DB_NAME' in os.environ:
+     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': config('DB_NAME', default=''),
-            'USER': config('DB_USER', default=''),
-            'PASSWORD': config('DB_PASSWORD', default=''),
-            'HOST': config('DB_HOST', default=''),
-            'PORT': config('DB_PORT', default='5432'),
+            'NAME': os.environ['RDS_DB_NAME'],
+            'USER': os.environ['RDS_USERNAME'],
+            'PASSWORD': os.environ['RDS_PASSWORD'],
+            'HOST': os.environ['RDS_HOSTNAME'],
+            'PORT': os.environ['RDS_PORT'],
         }
     }
 else:
