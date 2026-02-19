@@ -27,12 +27,7 @@ SECRET_KEY = config('SECRET_KEY', default='unsafe-dev-secret-key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool) # True
 
-ALLOWED_HOSTS = ["vividvault-venv.eba-wj36dskn.ap-south-1.elasticbeanstalk.com",
-                 "172.31.25.10",
-                 "172.31.5.85",
-    "13.205.217.51",
-    "localhost",
-    "127.0.0.1",]
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '*').split(',')
 
 
 # Application definition
