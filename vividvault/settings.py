@@ -94,7 +94,9 @@ AUTH_USER_MODEL = 'accounts.Account'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 # Database Configuration
-if 'RDS_DB_NAME' in os.environ:
+import os
+
+if os.environ.get("ENVIRONMENT") == "production":
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
@@ -102,7 +104,7 @@ if 'RDS_DB_NAME' in os.environ:
             'USER': os.environ['RDS_USERNAME'],
             'PASSWORD': os.environ['RDS_PASSWORD'],
             'HOST': os.environ['RDS_HOSTNAME'],
-            'PORT': os.environ['RDS_PORT'],
+            'PORT': os.environ.get('RDS_PORT', '5432'),
         }
     }
 else:
