@@ -1,1 +1,1 @@
-web: gunicorn vividvault.wsgi
+web: gunicorn vividvault.wsgi:application
