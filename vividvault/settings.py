@@ -94,24 +94,21 @@ AUTH_USER_MODEL = 'accounts.Account'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 # Database Configuration
-if 'RDS_DB_NAME' in os.environ:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.environ['RDS_DB_NAME'],
-            'USER': os.environ['RDS_USERNAME'],
-            'PASSWORD': os.environ['RDS_PASSWORD'],
-            'HOST': os.environ['RDS_HOSTNAME'],
-            'PORT': os.environ['RDS_PORT'],
-        }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'vivid',
+        'PASSWORD': 'Nk3986345.nkm',
+        'HOST': 'vividvaultdbidentifier.c12uo62g27ov.ap-south-2.rds.amazonaws.com',
+        'PORT': 5432,
+        'OPTIONS': {
+            'sslmode': 'require',
+        },
     }
-else: 
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
+}
+
 
 
 
