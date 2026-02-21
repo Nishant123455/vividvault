@@ -100,12 +100,10 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'postgres',
         'USER': 'vivid',
-        'PASSWORD': 'Nk3986345.nkm',
+        'PASSWORD': 'Nk3986345',
         'HOST': 'vividvaultdbidentifier.c12uo62g27ov.ap-south-2.rds.amazonaws.com',
         'PORT': 5432,
-        'OPTIONS': {
-            'sslmode': 'require',
-        },
+        
     }
 }
 
