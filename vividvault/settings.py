@@ -94,14 +94,14 @@ AUTH_USER_MODEL = 'accounts.Account'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 # Database Configuration
-
+PASSWORD = "Nk3986345.nkm"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'vivid',
-        'PASSWORD': 'Nk3986345',
-        'HOST': 'vividvaultdbidentifier.c12uo62g27ov.ap-south-2.rds.amazonaws.com',
+        'NAME': 'vividvaultrds',
+        'USER': 'vividuser',
+        'PASSWORD': PASSWORD,
+        'HOST': 'database-vivid.c1a26qeisten.ap-south-1.rds.amazonaws.com',
         'PORT': 5432,
         
     }
