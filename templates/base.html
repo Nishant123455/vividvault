@@ -77,17 +77,17 @@ $(document).ready(function() {
         const windowHeight = window.innerHeight;
         const docHeight = document.documentElement.scrollHeight;
 
-        // Short pages (no scroll)
+        // Short page → always show
         if (docHeight <= windowHeight + 5) {
-            footer.classList.add('footer-visible');
+            footer.classList.add('show-footer');
             return;
         }
 
-        // Long pages → show only at bottom
-        if (scrollTop + windowHeight >= docHeight - 5) {
-            footer.classList.add('footer-visible');
+        // Show only at bottom
+        if (scrollTop + windowHeight >= docHeight - 10) {
+            footer.classList.add('show-footer');
         } else {
-            footer.classList.remove('footer-visible');
+            footer.classList.remove('show-footer');
         }
     }
 
@@ -96,6 +96,15 @@ $(document).ready(function() {
     window.addEventListener('resize', toggleFooter);
 })();
 
+window.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".header-main");
+
+    if (window.scrollY > 40) {
+        navbar.classList.add("navbar-scrolled");
+    } else {
+        navbar.classList.remove("navbar-scrolled");
+    }
+});
 
 
 </script>

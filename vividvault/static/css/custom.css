@@ -1,61 +1,298 @@
-/* Hide Radio button */
-.rate > input{
-  display: none;
-}
 
-.rate{
-  display: inline-block;;
-  border: 0;
-}
+/* ======================================
+   GLOBAL
+   ====================================== */
 
-.rate > label{
-  float: right;
-}
-
-/* Showing the stars */
-.rate > label:before{
-  display: inline-block;
-  font-size: 1.1rem;
-  font-family: FontAwesome;
-  content: "\f005";
-  margin:0;
-  padding:0.3rem .2rem;
-  cursor: pointer;
-}
-
-/* Half star */
-.rate .half:before{
-  content: "\f089";
-  position: absolute;
-  padding-right: 0;
-}
-
-/* Click and hover */
-input:checked ~ label, label:hover ~ label{
-  color: #ffb503;
-}
-
-/* hover hightlight */
-input:checked + label:hover, input:checked ~ label:hover,input:checked ~ label:hover ~ label,
-label:hover ~ input:checked ~ label{
-  color: #cc9000;
-}
-
-.rating-star i{
-  color: #ffb503 !important;
-}
-
-ul.thumb{
-  margin:0 auto;
+html, body {
+  background-color: #efe2c8;
+  margin: 0;
   padding: 0;
-  float: left;
+  font-family: Arial, sans-serif;
+  animation: fadeInPage 0.6s ease;
 }
-ul.thumb li{
-  list-style: none;
-  margin: 10px;
+
+.page-content {
+  padding-top: 90px;
 }
-ul.thumb li img{
-  width: 80px;
-  height: 80px;
-  border: 1px solid grey;
+
+@keyframes fadeInPage {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ======================================
+   TOP BAR
+   ====================================== */
+
+.top-bar {
+  background: linear-gradient(135deg, #7a5a2f, #2a2a2a);
+  color: #e6e6e6;
+  font-size: 14px;
+  padding: 8px 0;
+}
+
+.top-bar i {
+  color: #d6a96c;
+}
+
+/* ======================================
+   PREMIUM NAVBAR
+   ====================================== */
+
+.section-header .header-main {
+  background: rgba(31,31,31,0.85);
+  backdrop-filter: blur(12px);
+  transition: all 0.35s ease;
+  padding: 14px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* shrink on scroll */
+.navbar-scrolled {
+  padding: 8px 0 !important;
+  background: rgba(20,20,20,0.95) !important;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+.navbar-scrolled .logo {
+  max-height: 38px;
+}
+
+/* Logo */
+.logo {
+  max-height: 45px;
+  transition: transform 0.3s;
+}
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Links */
+.section-header a {
+  color: #e0e0e0;
+  position: relative;
+}
+.section-header a:hover {
+  color: #d6a96c;
+}
+
+/* underline animation */
+.section-header a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: #d6a96c;
+  transition: width 0.3s;
+}
+.section-header a:hover::after {
+  width: 100%;
+}
+
+/* Category button */
+.btn.dropdown-toggle {
+  background: #a97a45;
+  border: none;
+  border-radius: 8px;
+}
+
+/* Search */
+.search .form-control {
+  border-radius: 25px 0 0 25px;
+}
+.search .btn {
+  border-radius: 0 25px 25px 0;
+  background: #a97a45;
+}
+.search .form-control:focus {
+  box-shadow: 0 0 0 3px rgba(214,169,108,0.4);
+}
+
+/* Icons */
+.icon {
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  padding: 8px;
+  transition: 0.3s;
+}
+.icon:hover {
+  transform: translateY(-3px) scale(1.1);
+  background: #a97a45;
+}
+
+/* ======================================
+   HERO BANNER
+   ====================================== */
+
+.card-banner {
+  overflow: hidden;
+  border-radius: 16px;
+  position: relative;
+}
+
+.card-banner img {
+  transition: transform 0.6s;
+}
+.card-banner:hover img {
+  transform: scale(1.08);
+}
+
+.card-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.5), transparent);
+}
+
+/* ======================================
+   PRODUCT CARDS (PREMIUM)
+   ====================================== */
+
+.card-product {
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  transition: 0.35s;
+  position: relative;
+}
+
+.card-product:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+}
+
+.card-product img {
+  transition: 0.5s;
+}
+.card-product:hover img {
+  transform: scale(1.1);
+}
+
+/* Quick view */
+.quick-view {
+  position: absolute;
+  bottom: -50px;
+  width: 100%;
+  text-align: center;
+  transition: 0.3s;
+}
+.card-product:hover .quick-view {
+  bottom: 20px;
+}
+
+.quick-view button {
+  background: #d6a96c;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  color: #fff;
+}
+
+/* ======================================
+   GENERAL CARD
+   ====================================== */
+
+.card {
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-6px);
+}
+
+/* ======================================
+   BUTTONS
+   ====================================== */
+
+.btn-primary {
+  border-radius: 12px;
+  transition: 0.3s;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(137,100,59,0.4);
+}
+
+/* ======================================
+   FORMS
+   ====================================== */
+
+.form-control {
+  border-radius: 10px;
+  border: 1px solid #d6c6a1;
+}
+.form-control:focus {
+  border-color: #89643b;
+  box-shadow: 0 0 0 2px rgba(137,100,59,0.2);
+}
+
+/* ======================================
+   FOOTER (PREMIUM GLASS)
+   ====================================== */
+
+.section-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(30,30,30,0.75);
+  backdrop-filter: blur(14px);
+  transform: translateY(110%);
+  transition: 0.5s;
+  z-index: 999;
+}
+
+.section-footer.show-footer {
+  transform: translateY(0);
+}
+
+/* footer glow line */
+.section-footer::before {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(to right, transparent, #d6a96c, transparent);
+  position: absolute;
+  top: 0;
+}
+
+/* icons */
+.footer-icons i {
+  font-size: 20px;
+  color: #d6a96c;
+  padding: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  transition: 0.3s;
+}
+.footer-icons i:hover {
+  color: #fff;
+  background: #d6a96c;
+  transform: translateY(-6px) scale(1.2);
+  box-shadow: 0 10px 25px rgba(214,169,108,0.5);
+}
+
+/* prevent overlap */
+body {
+  padding-bottom: 90px;
+}
+
+/* ======================================
+   RESPONSIVE
+   ====================================== */
+
+@media (max-width: 768px) {
+  .section-header .row {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .card-product:hover {
+    transform: translateY(-5px);
+  }
 }
