@@ -49,6 +49,7 @@ $(document).ready(function() {
 
 </head>
 <body>
+    {% csrf_token %}
 
   <!-- navbar -->
   {% include 'includes/navbar.html' %}
@@ -104,6 +105,62 @@ window.addEventListener("scroll", function () {
     } else {
         navbar.classList.remove("navbar-scrolled");
     }
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]')?.value;
+
+    // PLUS BUTTON
+    document.querySelectorAll(".btn-plus").forEach(btn => {
+        btn.addEventListener("click", function () {
+            updateCart(this.dataset.cartId, "plus", this);
+        });
+    });
+
+    // MINUS BUTTON
+    document.querySelectorAll(".btn-minus").forEach(btn => {
+        btn.addEventListener("click", function () {
+            updateCart(this.dataset.cartId, "minus", this);
+        });
+    });
+
+    function updateCart(cartId, action, button) {
+
+        fetch("/cart/update-cart/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+                "X-CSRFToken": csrftoken,
+            },
+            body: `cart_item_id=${cartId}&action=${action}`
+        })
+        .then(response => response.json())
+        .then(data => {
+
+            // REMOVE ITEM
+            if (data.removed) {
+                button.closest("tr").remove();
+                return;
+            }
+
+            // UPDATE QUANTITY
+            const row = button.closest("tr");
+            row.querySelector(".quantity-input").value = data.quantity;
+
+            // UPDATE SUBTOTAL
+            row.querySelector(".pricee").innerText = "$ " + data.sub_total;
+
+            // UPDATE TOTALS
+            document.getElementById("cart-total").innerText = data.total;
+            document.getElementById("cart-tax").innerText = data.tax;
+            document.getElementById("cart-grand-total").innerText = data.grand_total;
+
+        })
+        .catch(error => console.error("Error:", error));
+    }
+
 });
 
 

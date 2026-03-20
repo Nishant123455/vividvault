@@ -1,285 +1,673 @@
 
 /* ======================================
-   GLOBAL
+   GLOBAL BACKGROUND FIX (FINAL)
    ====================================== */
 
-html, body {
-  background-color: #efe2c8;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  animation: fadeInPage 0.6s ease;
+/* force same background everywhere */
+body {
+    background-color: #efe2c8 !important;
 }
 
-.page-content {
-  padding-top: 90px;
+/* remove white sections */
+.section-content,
+.section-name,
+.section-pagetop,
+.bg,
+main,
+.container {
+    background: transparent !important;
 }
 
-@keyframes fadeInPage {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
+/* keep cards clean */
+.card,
+.card-product-grid {
+    background: #f6f6f6;
 }
 
-/* ======================================
-   TOP BAR
-   ====================================== */
-
-.top-bar {
-  background: linear-gradient(135deg, #7a5a2f, #2a2a2a);
-  color: #e6e6e6;
-  font-size: 14px;
-  padding: 8px 0;
+/* ensure full page */
+html {
+    background-color: #efe2c8;
 }
 
-.top-bar i {
-  color: #d6a96c;
-}
+/* ###################################################################  */
 
-/* ======================================
-   PREMIUM NAVBAR
-   ====================================== */
 
-.section-header .header-main {
-  background: rgba(31,31,31,0.85);
-  backdrop-filter: blur(12px);
-  transition: all 0.35s ease;
-  padding: 14px 0;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-}
 
-/* shrink on scroll */
-.navbar-scrolled {
-  padding: 8px 0 !important;
-  background: rgba(20,20,20,0.95) !important;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-}
-
-.navbar-scrolled .logo {
-  max-height: 38px;
-}
-
-/* Logo */
-.logo {
-  max-height: 45px;
-  transition: transform 0.3s;
-}
-.logo:hover {
-  transform: scale(1.05);
-}
-
-/* Links */
-.section-header a {
-  color: #e0e0e0;
-  position: relative;
-}
-.section-header a:hover {
-  color: #d6a96c;
-}
-
-/* underline animation */
-.section-header a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: -4px;
-  left: 0;
-  background: #d6a96c;
-  transition: width 0.3s;
-}
-.section-header a:hover::after {
-  width: 100%;
-}
-
-/* Category button */
-.btn.dropdown-toggle {
-  background: #a97a45;
-  border: none;
-  border-radius: 8px;
-}
-
-/* Search */
-.search .form-control {
-  border-radius: 25px 0 0 25px;
-}
-.search .btn {
-  border-radius: 0 25px 25px 0;
-  background: #a97a45;
-}
-.search .form-control:focus {
-  box-shadow: 0 0 0 3px rgba(214,169,108,0.4);
-}
-
-/* Icons */
-.icon {
-  border: 1px solid rgba(255,255,255,0.3);
-  border-radius: 50%;
-  padding: 8px;
-  transition: 0.3s;
-}
-.icon:hover {
-  transform: translateY(-3px) scale(1.1);
-  background: #a97a45;
-}
 
 /* ======================================
-   HERO BANNER
-   ====================================== */
-
-.card-banner {
-  overflow: hidden;
-  border-radius: 16px;
-  position: relative;
-}
-
-.card-banner img {
-  transition: transform 0.6s;
-}
-.card-banner:hover img {
-  transform: scale(1.08);
-}
-
-.card-banner::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, rgba(0,0,0,0.5), transparent);
-}
-
-/* ======================================
-   PRODUCT CARDS (PREMIUM)
-   ====================================== */
-
-.card-product {
-  border-radius: 16px;
-  overflow: hidden;
-  background: #fff;
-  transition: 0.35s;
-  position: relative;
-}
-
-.card-product:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.2);
-}
-
-.card-product img {
-  transition: 0.5s;
-}
-.card-product:hover img {
-  transform: scale(1.1);
-}
-
-/* Quick view */
-.quick-view {
-  position: absolute;
-  bottom: -50px;
-  width: 100%;
-  text-align: center;
-  transition: 0.3s;
-}
-.card-product:hover .quick-view {
-  bottom: 20px;
-}
-
-.quick-view button {
-  background: #d6a96c;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 20px;
-  color: #fff;
-}
-
-/* ======================================
-   GENERAL CARD
-   ====================================== */
-
-.card {
-  border-radius: 16px;
-  border: none;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-  transition: 0.3s;
-}
-.card:hover {
-  transform: translateY(-6px);
-}
-
-/* ======================================
-   BUTTONS
+   PRIMARY BUTTON (SOLID GOLD)
    ====================================== */
 
 .btn-primary {
-  border-radius: 12px;
-  transition: 0.3s;
+    background: #b8894f !important;
+    border: none !important;
+    color: #fff !important;
+    border-radius: 12px;
+    font-weight: 600;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
 }
+
+/* hover */
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(137,100,59,0.4);
+    background: #a97a45 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(184,137,79,0.3);
+}
+
+/* click */
+.btn-primary:active {
+    transform: scale(0.96);
 }
 
 /* ======================================
-   FORMS
+   OUTLINE BUTTON (PREMIUM STYLE)
    ====================================== */
 
-.form-control {
-  border-radius: 10px;
-  border: 1px solid #d6c6a1;
+.btn-outline-primary {
+    background: transparent !important;
+    border: 1.5px solid #b8894f !important;
+    color: #b8894f !important;
+    border-radius: 12px;
+    font-weight: 600;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
 }
-.form-control:focus {
-  border-color: #89643b;
-  box-shadow: 0 0 0 2px rgba(137,100,59,0.2);
+
+/* hover → becomes filled */
+.btn-outline-primary:hover {
+    background: #b8894f !important;
+    color: #fff !important;
+    box-shadow: 0 8px 18px rgba(184,137,79,0.25);
+}
+
+/* click */
+.btn-outline-primary:active {
+    transform: scale(0.96);
 }
 
 /* ======================================
-   FOOTER (PREMIUM GLASS)
+   GLOBAL BUTTON FIX
+   ====================================== */
+
+.btn {
+    border-radius: 12px;
+}
+
+/* remove blue focus */
+.btn:focus,
+button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+/* ################################################################## */
+
+
+/* Hide Radio button */
+.rate > input{
+  display: none;
+}
+
+.rate{
+  display: inline-block;;
+  border: 0;
+}
+
+.rate > label{
+  float: right;
+}
+
+/* Showing the stars */
+.rate > label:before{
+  display: inline-block;
+  font-size: 1.1rem;
+  font-family: FontAwesome;
+  content: "\f005";
+  margin:0;
+  padding:0.3rem .2rem;
+  cursor: pointer;
+}
+
+/* Half star */
+.rate .half:before{
+  content: "\f089";
+  position: absolute;
+  padding-right: 0;
+}
+
+/* Click and hover */
+input:checked ~ label, label:hover ~ label{
+  color: #ffb503;
+}
+
+/* hover hightlight */
+input:checked + label:hover, input:checked ~ label:hover,input:checked ~ label:hover ~ label,
+label:hover ~ input:checked ~ label{
+  color: #cc9000;
+}
+
+.rating-star i{
+  color: #ffb503 !important;
+}
+
+ul.thumb{
+  margin:0 auto;
+  padding: 0;
+  float: left;
+}
+ul.thumb li{
+  list-style: none;
+  margin: 10px;
+}
+ul.thumb li img{
+  width: 80px;
+  height: 80px;
+  border: 1px solid grey;
+}
+
+
+
+
+
+
+
+/* ======================================
+   NAVBAR BASE (PREMIUM LOOK)
+   ====================================== */
+
+.header-main {
+    background: linear-gradient(135deg, #7b5a2c, #2a2a2a);
+    padding: 12px 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/* ======================================
+   FIX OVERLAP ISSUE (MAIN FIX)
+   ====================================== */
+
+.header-main .row.align-items-center {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 12px;
+}
+
+/* each column fix */
+.header-main .col-lg-2,
+.header-main .col-lg,
+.header-main .col-lg-3 {
+    display: flex;
+    align-items: center;
+}
+
+/* ======================================
+   LOGO (PREMIUM)
+   ====================================== */
+
+.logo {
+    height: 42px;
+    width: auto;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+/* hover zoom */
+.brand-wrap:hover .logo {
+    transform: scale(1.08);
+}
+
+/* shine effect */
+.brand-wrap {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.brand-wrap::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+    transform: skewX(-20deg);
+}
+
+.brand-wrap:hover::after {
+    animation: shineLogo 0.8s ease;
+}
+
+@keyframes shineLogo {
+    to { left: 120%; }
+}
+
+/* ======================================
+   CATEGORY BUTTON
+   ====================================== */
+
+.category-wrap {
+    margin-left: 10px;
+}
+
+.btn.dropdown-toggle {
+    background: #b8894f !important;
+    border: none !important;
+    color: #fff !important;
+    border-radius: 10px;
+    padding: 8px 16px;
+    white-space: nowrap;
+}
+
+.btn.dropdown-toggle:hover {
+    background: #a97a45 !important;
+}
+
+/* ======================================
+   STORE BUTTON FIX
+   ====================================== */
+
+.btn-outline-primary {
+    border: 1px solid #b8894f !important;
+    color: #b8894f !important;
+    border-radius: 10px;
+    padding: 6px 14px;
+    margin-left: 8px;
+}
+
+.btn-outline-primary:hover {
+    background: #b8894f !important;
+    color: #fff !important;
+}
+
+/* ======================================
+   SEARCH BAR
+   ====================================== */
+
+.search {
+    width: 100%;
+}
+
+.search .form-control {
+    border-radius: 25px 0 0 25px;
+    border: none;
+    padding: 10px 14px;
+}
+
+.search .btn {
+    background: #b8894f !important;
+    border: none !important;
+    border-radius: 0 25px 25px 0;
+    color: #fff;
+}
+
+.search .btn:hover {
+    background: #a97a45 !important;
+}
+
+/* ======================================
+   RIGHT SECTION
+   ====================================== */
+
+.widget-header {
+    color: #fff;
+    font-size: 14px;
+}
+
+.widget-header a {
+    color: #d6a96c;
+}
+
+.widget-header a:hover {
+    text-decoration: underline;
+}
+
+/* cart icon */
+.icon {
+    border: 1px solid rgba(255,255,255,0.4);
+    transition: 0.3s;
+}
+
+.icon:hover {
+    background: #b8894f;
+    transform: scale(1.1);
+}
+
+/* cart badge */
+.notify {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+}
+
+/* ======================================
+   FIX FLOAT ISSUE (IMPORTANT)
+   ====================================== */
+
+.category-wrap.float-right {
+    float: none !important;
+}
+
+/* ======================================
+   MOBILE FIX
+   ====================================== */
+
+@media (max-width: 768px) {
+
+    .header-main .row.align-items-center {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo {
+        height: 34px;
+    }
+
+    .btn.dropdown-toggle {
+        padding: 6px 12px;
+    }
+}
+
+
+
+/* ======================================
+   REMOVE BLUE HOVER (GLOBAL FIX)
+   ====================================== */
+
+/* all links */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #d6a96c !important; /* gold hover */
+    text-decoration: none;
+}
+
+/* ======================================
+   NAVBAR LINKS (DASHBOARD / LOGOUT)
+   ====================================== */
+
+.widget-header a {
+    color: #d6a96c;
+    transition: 0.3s ease;
+}
+
+.widget-header a:hover {
+    color: #ffffff !important;
+}
+
+/* ======================================
+   CART ICON FIX
+   ====================================== */
+
+.widget-header .icon i {
+    color: #ffffff;
+    transition: 0.3s ease;
+}
+
+/* hover effect */
+.widget-header:hover .icon i {
+    color: #d6a96c;
+}
+
+/* ======================================
+   REMOVE BLUE FOCUS (IMPORTANT)
+   ====================================== */
+
+a:focus,
+button:focus,
+.btn:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* ======================================
+   REMOVE BOOTSTRAP ACTIVE BLUE
+   ====================================== */
+
+a:active,
+.btn:active {
+    color: #d6a96c !important;
+    background: none !important;
+}
+
+/* ======================================
+   DROPDOWN LINKS (CATEGORY)
+   ====================================== */
+
+.dropdown-item {
+    color: #e0e0e0;
+}
+
+.dropdown-item:hover {
+    background: rgba(214,169,108,0.2);
+    color: #ffffff !important;
+}
+
+
+
+
+
+/* ======================================
+   FOOTER BASE (HIDDEN INITIALLY)
    ====================================== */
 
 .section-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background: rgba(30,30,30,0.75);
-  backdrop-filter: blur(14px);
-  transform: translateY(110%);
-  transition: 0.5s;
-  z-index: 999;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+
+    /* SAME AS NAVBAR */
+    background: linear-gradient(135deg, #7b5a2c, #2a2a2a);
+
+    color: #e6e6e6;
+    padding: 16px 0;
+
+    transform: translateY(110%);
+    transition: transform 0.45s ease;
+
+    /* prevent overlap issues */
+    pointer-events: none;
 }
+
+/* show footer */
+.section-footer.show-footer {
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* ======================================
+   TOP GLOW LINE (PREMIUM TOUCH)
+   ====================================== */
+
+.section-footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #d6a96c, transparent);
+}
+
+/* ======================================
+   TEXT
+   ====================================== */
+
+.footer-brand {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.footer-info span {
+    margin: 0 12px;
+    font-size: 14px;
+    color: #dcdcdc;
+    transition: color 0.3s ease;
+}
+
+.footer-info i {
+    color: #d6a96c;
+}
+
+/* hover text */
+.footer-info span:hover {
+    color: #ffffff;
+}
+
+/* ======================================
+   ICONS (PREMIUM INTERACTION)
+   ====================================== */
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* icon style */
+.footer-icons i {
+    font-size: 18px;
+    color: #d6a96c;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+/* hover effect */
+.footer-icons i:hover {
+    color: #ffffff;
+    background: #b8894f;
+    transform: translateY(-4px) scale(1.15);
+    box-shadow: 0 8px 20px rgba(214,169,108,0.4);
+}
+
+/* ======================================
+   PREVENT CONTENT OVERLAP (CRITICAL)
+   ====================================== */
+
+body {
+    padding-bottom: 80px;
+}
+
+/* ======================================
+   SMOOTH ENTRY ANIMATION
+   ====================================== */
 
 .section-footer.show-footer {
-  transform: translateY(0);
+    animation: footerSlideUp 0.45s ease;
 }
 
-/* footer glow line */
-.section-footer::before {
-  content: "";
-  height: 2px;
-  width: 100%;
-  background: linear-gradient(to right, transparent, #d6a96c, transparent);
-  position: absolute;
-  top: 0;
+@keyframes footerSlideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
-/* icons */
-.footer-icons i {
-  font-size: 20px;
-  color: #d6a96c;
-  padding: 10px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.05);
-  transition: 0.3s;
-}
-.footer-icons i:hover {
-  color: #fff;
-  background: #d6a96c;
-  transform: translateY(-6px) scale(1.2);
-  box-shadow: 0 10px 25px rgba(214,169,108,0.5);
+/* ======================================
+   MOBILE
+   ====================================== */
+
+@media (max-width: 768px) {
+
+    .footer-info span {
+        display: block;
+        margin: 4px 0;
+    }
+
+    .footer-icons {
+        margin-top: 8px;
+        flex-wrap: wrap;
+    }
 }
 
-/* prevent overlap */
-body {
-  padding-bottom: 90px;
+
+
+
+
+/* ======================================
+   VIDEO HERO BANNER
+   ====================================== */
+
+.video-banner {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+/* Video styling */
+.banner-video {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 18px;
+    display: block;
+}
+
+/* Dark gradient overlay (premium feel) */
+.video-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.2),
+        transparent
+    );
+    border-radius: 18px;
+}
+
+/* Optional content overlay (text if you add later) */
+.video-banner .banner-content {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    z-index: 2;
+    color: #fff;
+}
+
+/* Title */
+.banner-content h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+/* Subtitle */
+.banner-content p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* Button */
+.banner-content .btn {
+    margin-top: 12px;
+    background: #b8894f;
+    border: none;
+    color: #fff;
+    border-radius: 25px;
+    padding: 8px 18px;
+}
+
+.banner-content .btn:hover {
+    background: #a97a45;
 }
 
 /* ======================================
@@ -287,12 +675,54 @@ body {
    ====================================== */
 
 @media (max-width: 768px) {
-  .section-header .row {
-    flex-wrap: wrap;
-    text-align: center;
-  }
+    .banner-video {
+        height: 220px;
+    }
 
-  .card-product:hover {
-    transform: translateY(-5px);
-  }
+    .banner-content {
+        left: 20px;
+    }
+
+    .banner-content h2 {
+        font-size: 22px;
+    }
 }
+
+
+
+
+/* ======================================
+   DASHBOARD SIDEBAR ACTIVE TAB
+   ====================================== */
+
+/* active link */
+.list-group-item.active,
+.nav-link.active {
+    background-color: #b8894f !important;
+    border-color: #b8894f !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+/* hover effect */
+.list-group-item:hover,
+.nav-link:hover {
+    background-color: rgba(184,137,79,0.15);
+    color: #b8894f !important;
+}
+
+/* remove bootstrap blue focus */
+.list-group-item:focus,
+.nav-link:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* sidebar card styling (premium touch) */
+.dashboard-sidebar .card,
+aside .card {
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
