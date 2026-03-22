@@ -726,3 +726,69 @@ aside .card {
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
+
+
+/* ======================================
+   PAGINATION (REMOVE BLUE COMPLETELY)
+   ====================================== */
+
+.pagination .page-link {
+    color: #b8894f !important;
+    border: 1px solid #d6c6a1;
+    border-radius: 8px;
+    margin: 0 4px;
+    transition: all 0.25s ease;
+}
+
+/* hover */
+.pagination .page-link:hover {
+    background: #b8894f !important;
+    color: #fff !important;
+    border-color: #b8894f;
+}
+
+/* active page */
+.pagination .page-item.active .page-link {
+    background: #b8894f !important;
+    border-color: #b8894f !important;
+    color: #fff !important;
+}
+
+/* remove bootstrap blue focus */
+.pagination .page-link:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+
+
+
+/* ======================================
+   NAVBAR DROPDOWN FIX (VISIBLE + PREMIUM)
+   ====================================== */
+
+.header-main .dropdown-menu {
+    background: #2a2a2a !important;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    padding: 8px 0;
+}
+
+/* dropdown items */
+.header-main .dropdown-item {
+    color: #dcdcdc !important;
+    padding: 10px 16px;
+    transition: all 0.25s ease;
+}
+
+/* hover */
+.header-main .dropdown-item:hover {
+    background: rgba(184,137,79,0.2) !important;
+    color: #ffffff !important;
+}
+
+/* fix arrow icon color */
+.dropdown-toggle::after {
+    color: #fff;
+}
